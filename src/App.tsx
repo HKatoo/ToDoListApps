@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddTask from "./containers/AddTask";
+import ListItems from "./containers/ListItems";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">ToDoList</Typography>
+        </Toolbar>
+      </AppBar>
+      <AddTask />
+      <ListItems />
+      <AppBar position="fixed" style={{ top: "auto", bottom: 0, height: 32 }}>
+        <Toolbar></Toolbar>
+      </AppBar>
     </div>
   );
-}
+};
 
 export default App;
